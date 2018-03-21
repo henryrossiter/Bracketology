@@ -10,10 +10,10 @@ def matchup_to_string(team1_num, team2_num, team1_seed, team2_seed, team1_presen
     print("Team 2: "+str(team2_num)+"   seed: "+str(team2_seed)+"   in tourney last year: "+str(team2_presence_last_year))
     print("Seed differential: "+str(team2_seed - team1_seed)+" -- presence differential: "+str(exp_diff)+'\n')
 
-year_to_predict = int(input("enter a year to generate match predictions: "))
+year_to_predict = 2018
 
 # read in teams and corresponding seeds
-seeds = pd.read_csv('input/NCAATourneySeeds.csv')
+seeds = pd.read_csv('NCAATourneySeeds_SampleTourney2018.csv')
 seeds_last_year = seeds.loc[seeds['Season'] == year_to_predict-1]
 seeds = seeds.loc[seeds['Season'] == year_to_predict]
 tournament_results = pd.read_csv('input/NCAATourneyCompactResults.csv')
